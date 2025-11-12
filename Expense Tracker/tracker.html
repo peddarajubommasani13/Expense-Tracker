@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracker - My Expense Tracker</title>
+  <title>Dashboard - Expense Tracker</title>
   <link rel="stylesheet" href="styles/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body class="tracker-page">
   <header>
-    <h1>My Expense Tracker</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="tracker.html">Tracker</a>
-      <a href="about.html">About</a>
-    </nav>
+    <div class="container-header">
+      <h1>My Expense Tracker</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="about.html">About</a>
+        <button id="logout-btn" class="btn-small">Logout</button>
+      </nav>
+    </div>
   </header>
 
-  <div class="tracker-container">
-    <h2>Expense Tracker</h2>
-
-    <div class="balance">
-      <h3>Your Balance</h3>
+  <div class="dashboard-cards">
+    <div class="card balance-card">
+      <h3>Balance</h3>
       <h1 id="balance">$0.00</h1>
     </div>
-
-    <div class="income-expense">
-      <div class="income">
-        <h4>Income</h4>
-        <p id="money-plus" class="money plus">+$0.00</p>
-      </div>
-      <div class="expense">
-        <h4>Expense</h4>
-        <p id="money-minus" class="money minus">-$0.00</p>
-      </div>
+    <div class="card income-card">
+      <h3>Income</h3>
+      <p id="money-plus">+$0.00</p>
     </div>
-
-    <div class="history">
-      <h3>History</h3>
-      <ul id="list" class="list"></ul>
+    <div class="card expense-card">
+      <h3>Expense</h3>
+      <p id="money-minus">-$0.00</p>
     </div>
+  </div>
+
+  <div class="tracker-container">
+    <h2>Transaction History</h2>
+    <ul id="list" class="list"></ul>
 
     <h3>Add New Transaction</h3>
     <form id="form">
@@ -55,9 +54,10 @@
     </form>
   </div>
 
-  <footer>
-    <p>© 2025 My Expense Tracker</p>
-  </footer>
+  <div class="chart-container">
+    <h2>Spending by Category</h2>
+    <canvas id="categoryChart"></canvas>
+  </div>
 
   <script src="scripts/tracker.js"></script>
 </body>
