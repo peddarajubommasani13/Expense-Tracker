@@ -48,3 +48,15 @@ nav a:hover { text-decoration:underline; }
 
 /* Responsive */
 @media(max-width:450px){ .auth-container, .tracker-container, .dashboard-cards { width:95%; padding:15px; } }
+
+.chart-container {
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#categoryChart {
+  width: 100%;
+  height: 100%;
+}
